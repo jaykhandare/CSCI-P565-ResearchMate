@@ -1,0 +1,25 @@
+.verticle-center{
+
+ margin-top: 20%;
+color: white;
+background: rgba(255,255,255,0.4);
+
+
+
+}
+.background-img{
+    background-image: url("../../assets/img/login-background.jpg");
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+}
+.translucent{
+  background-color: white;
+  opacity: .5;
+ }
+ .form-container{
+   padding:50px;
+ }
+
+ .btn{
+   cursor: pointer;
+ }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="loginController.js"></script>
+</head>
+
+<body class="background-img" ng-app="loginApp">
+    <div class="container col-lg-4" ng-controller="loginController">
+
+        <form ng-submit="submit()" class="center-block verticle-center form-container">
+            <h2>Login</h2>
+
+
+            <div class="form-group">
+
+                <input type="email" id="email" class="form-control" placeholder="Email" ng-model="email" required>
+                <div class="col-md-12 text-right"><a class="pull-right" href="#">Forgot username</a></div>
+            </div>
+            <div class="form-group">
+
+                <input type="password" id="pwd" class="form-control" placeholder="Password" ng-model="pwd" required>
+                <div class="col-md-12 text-right"><a class="pull-right" href="#">Forgot password</a></div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <input type="submit" id="submit" class="btn btn-success" value="Login">
+                </div>
+                <div class="form-group col-lg-6 text-right">
+                    <input type="button" id="btn-signup" ng-click="redirectSignup()" class="btn btn-success" value="Sign up">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
