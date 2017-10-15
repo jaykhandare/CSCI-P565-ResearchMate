@@ -14,7 +14,7 @@ myApp.controller('loginController',function($scope,$http, $location, $cookies, $
       var username = $scope.username;
       var password = $scope.pwd;
       $http({
-        url: "http://silo.soic.indiana.edu:54545/verifyLogin",
+        url: "http://silo.soic.indiana.edu:54545/login",
         method: "POST",
         data: {
           'username':username,
@@ -42,6 +42,7 @@ myApp.controller('loginController',function($scope,$http, $location, $cookies, $
      * @type {[Useremail]}
      */
     $scope.sendUsername = function(){
+      debugger
       var email = $scope.useremail;
       if(email.trim()!=""){
         $http({
@@ -52,6 +53,7 @@ myApp.controller('loginController',function($scope,$http, $location, $cookies, $
         },
 
         }).then(function success(response){
+          debugger
           if(response.status==200){
             if(response.data.status=="false"){
               if(response.data.msg!="")
@@ -63,6 +65,7 @@ myApp.controller('loginController',function($scope,$http, $location, $cookies, $
           }
         },
         function error(response){
+          debugger
           alert("Error occured while sending username");
         }
       );
@@ -108,6 +111,47 @@ myApp.controller('loginController',function($scope,$http, $location, $cookies, $
         alert("Please enter email address");
       }
     };
+
+    $scope.verifyUser = function(){
+      var username = $scope.verUsername.trim();
+      var verificationNum = $scope.verNumber.trim();
+      if(username == ""){
+          alert("Please provide username");
+          return;
+        }
+      if(verificationNum == ""){
+        alert("Please provide verification number");
+        return;
+      }
+      // if all required inputs are given, hit post call
+      $http({
+        url: "http://silo.soic.indiana.edu:54545/verifyUser",
+        method: "POST",
+        data: {
+          'username':username,
+          'verificationnumber': verificationNum
+      },
+
+      }).then(function success(response){
+        if(response.status==200){
+          if(response.data.status=="false"){
+            if(response.data.msg!="")
+              alert(response.data.msg)
+          }
+          else{
+            alert("Account verified successfully");
+          }
+        }
+      },
+      function error(response){
+        alert("Error occured while updating password");
+      }
+    );
+
+
+
+      };
+
 
     /**
      * [updatePassword Function to update the password]
