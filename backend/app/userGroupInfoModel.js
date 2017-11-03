@@ -2,12 +2,10 @@ var mongoose = require('mongoose');
 
 var userGroupSchema = mongoose.Schema({
     userID:{
-        type:Number,
-        required: true
+        type:Number
     },
     groupID:{
-        type: Number,
-        required: true
+        type: Number
     }
 });
 
