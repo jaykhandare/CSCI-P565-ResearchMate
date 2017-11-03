@@ -49,7 +49,6 @@ var response = {
     "msg" : ""
 };
 
-
 //  hashing function
 var myHasher = function(password) {
     if(password.trim()=="")
