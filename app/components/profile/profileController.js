@@ -1,10 +1,11 @@
-myApp.controller('profileController', function ($scope, $http, $location, $cookies, $cookieStore, Upload, $rootScope) {
+myApp.controller('profileController', function ($scope, $http, $location, $cookies, $cookieStore, Upload, $rootScope,chatService) {
 
   var sessionString = $cookies.get('sessionString');
-
-
+  
+ 
   var url = $location.path().split('/');
   $scope.username = url[2];
+ 
   $scope.edit = false;
   $scope.icon = "fa fa-pencil-square-o btnEdit"
   $rootScope.loggedIn = true;

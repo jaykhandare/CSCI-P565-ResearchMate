@@ -1,6 +1,6 @@
-myApp.controller('indexController', ['$scope','$location', function ($scope, $location) {
+myApp.controller('indexController', ['$scope','$location','$cookies', function ($scope, $location,$cookies) {
   $scope.searchQuery = function(){
-    debugger
+
     if($scope.searchStr.indexOf('=')!=-1){
       alert("Possible attempt of SQL Injection. Request blocked!");
       return;
@@ -8,7 +8,13 @@ myApp.controller('indexController', ['$scope','$location', function ($scope, $lo
     }
     $location.path("/search/").search({'searchStr':$scope.searchStr})
   };
+  var url = $location.path().split('/');
+  $scope.username = url[2];
 
+ $scope.redirectChat = function(){
+   $location.path('/chat/'+$scope.username);
+ }
+ 
   $scope.signOut = function() {
 
 window.location.href="http://localhost/researchmate";

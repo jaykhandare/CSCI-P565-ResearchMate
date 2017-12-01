@@ -1,4 +1,4 @@
-myApp.controller('searchController', ['$scope', '$http', '$location', 'URL', '$cookieStore', '$cookies', function ($scope, $http, $location, URL, $cookieStore, $cookies) {
+myApp.controller('searchController', ['$scope', '$http', '$location', 'URL', '$cookieStore', '$cookies','$rootScope', function ($scope, $http, $location, URL, $cookieStore, $cookies,$rootScope) {
   var searchQuery = $location.search().searchStr;
   
   $scope.currentUsername = $cookies.get("username");

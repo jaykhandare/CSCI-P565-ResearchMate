@@ -26,6 +26,8 @@
   <script src="components/discussion/discussionDetailController.js"></script>
   <script src="components/group/addGroupController.js"></script>
   <script src="components/group/pendingRequestController.js"></script>
+  <script src="components/chat/chat.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
   <script src="assets/js/ng-file-upload-shim.min.js"></script>
@@ -66,7 +68,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="http://localhost/researchmate/#/discussion/-1">Discussion</a></li>
             <li><a href="http://localhost/researchmate/#/groups">Groups</a></li>
-            <li><a href="http://localhost/researchmate/#/chat">chat</a></li>
+            <li><a href="" ng-click="redirectChat()">chat</a></li>
           </ul>
           </div>
           <form class="navbar-form" role="search" ng-show="loggedIn">
